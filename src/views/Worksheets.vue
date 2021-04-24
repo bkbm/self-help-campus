@@ -1,6 +1,6 @@
 <template>
   <h2>Worksheets</h2>
-  <Questions />
+  <route-link>Worksheet Test</route-link>
 </template>
 
 <script>
@@ -14,4 +14,4 @@ export default {
 </script>
 
 <style></style>
-X
+

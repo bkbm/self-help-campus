@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Worksheets from "../views/Worksheets.vue";
+import Worksheet from "../views/Worksheet.vue";
 import Dashboard from "../views/Dashboard.vue";
 import { auth } from "../firebase";
 console.log(auth);
@@ -34,6 +35,15 @@ const routes = [
     meta: {
       requireAuth: true,
     },
+  },
+  {
+    path: "/worksheets/:id",
+    name: "Worksheet",
+    component: Worksheet,
+    props: true,
+    meta: {
+      requireAuth: true
+    }
   },
 ];
 
