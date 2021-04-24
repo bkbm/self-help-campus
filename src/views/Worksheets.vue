@@ -4,9 +4,9 @@
 </template>
 
 <script>
-import Questions from "../components/Questions.vue";
+import Questions from '../components/Questions.vue';
 export default {
-    name: "Worksheets",
+    name: 'Worksheets',
     components: {
         Questions,
     },

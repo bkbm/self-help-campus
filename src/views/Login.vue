@@ -1,7 +1,9 @@
 <template>
     <div id="login">
         <section>
-            <div class="col1">
+            <div
+                class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
+            >
                 <h1>Self Help Campus</h1>
             </div>
             <div class="login">
