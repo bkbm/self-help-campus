@@ -15,7 +15,9 @@ export default {
   },
   props: ['id'],
   setup(props){
-      return {a : ref(props['id'])}
+    const  a = ref(props['id'])
+    console.log(a)
+      return {a}
   },
 };
 </script>

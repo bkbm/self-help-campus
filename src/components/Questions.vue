@@ -15,13 +15,16 @@
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 export default {
+  props: ['id'],
   setup(props){
     const store = useStore()
     const worksheetid = ref(props.id)
     const array = computed(() => {
-      return store.getters.getQuestions[worksheetid]
+      return store.getters.getQuestions[worksheetid.value]
     })
-    return {array}
+    
+    console.log(worksheetid)
+    return {worksheetid, array}
   }
 };
 </script>
