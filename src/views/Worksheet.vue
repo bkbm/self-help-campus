@@ -1,22 +1,21 @@
 <template>
   <div class="header"></div>
   <div>
-      <Questions />
+    <Questions :id="a" />
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 import Questions from "../components/Questions.vue";
 export default {
-  name: Worksheet,
+  name: "Worksheet",
   components: {
     Questions,
   },
-  props: [id],
-  setup(props) {
-    const id = ref(props.id);
-
-    return { id };
+  props: ['id'],
+  setup(props){
+      return {a : ref(props['id'])}
   },
 };
 </script>

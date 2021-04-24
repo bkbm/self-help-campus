@@ -7,6 +7,7 @@ export default createStore({
   state: {
     userProfile: {},
     worksheet: {},
+    questions: {'ws1': ['Question 1', 'Question 2', 'Question 3']}
   },
   getters: {
     getUserProfile(state) {
@@ -15,6 +16,9 @@ export default createStore({
     getWorksheet(state) {
       return state.worksheet;
     },
+    getQuestions(state){
+      return state.questions
+    }
   },
   mutations: {
     setUserProfile(state, val) {
@@ -32,13 +36,12 @@ export default createStore({
       );
 
       dispatch("fetchUserProfile", user);
+      router.push("/dashboard");
     },
     async fetchUserProfile({ commit }, user) {
       const userProfile = await firebase.usersCollection.doc(user.uid).get();
 
       commit("setUserProfile", userProfile.data());
-
-      router.push("/dashboard");
     },
     async signup({ dispatch }, form) {
       const { user } = await firebase.auth.createUserWithEmailAndPassword(
@@ -53,6 +56,7 @@ export default createStore({
       });
 
       dispatch("fetchUserProfile", user);
+      router.push("/dashboard");
     },
   },
   modules: {},
