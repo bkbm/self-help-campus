@@ -6,9 +6,18 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 export default {
   name: "Worksheets",
   components: {},
+=======
+import Questions from '../components/Questions.vue';
+export default {
+    name: 'Worksheets',
+    components: {
+        Questions,
+    },
+>>>>>>> ece66b8b530affcbc69cc95cb4a1d42e626d9781
 };
 </script>
 
