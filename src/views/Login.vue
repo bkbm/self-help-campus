@@ -1,18 +1,14 @@
 <template>
-    <div id="login">
-        <section>
-            <div
-                class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
-            >
+    <div class="container">
+        <div class="flex w-1/2">
+            <div class="p-6">
                 <h1>Self Help Campus</h1>
             </div>
-            <div class="login">
-                <LoginComponent />
-            </div>
-            <div class="signup">
-                <SignupComponent />
-            </div>
-        </section>
+            <LoginComponent />
+        </div>
+        <div class="flex w-1/2">
+            <SignupComponent />
+        </div>
     </div>
 </template>
 <script>
