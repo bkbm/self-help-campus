@@ -16,10 +16,10 @@
     </div>
 </template>
 <script>
-import LoginComponent from "../components/LoginComponent";
-import SignupComponent from "../components/SignupComponent";
+import LoginComponent from '../components/LoginComponent';
+import SignupComponent from '../components/SignupComponent';
 export default {
-    name: "Login",
+    name: 'Login',
     components: {
         LoginComponent,
         SignupComponent,
