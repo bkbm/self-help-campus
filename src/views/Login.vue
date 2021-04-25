@@ -19,11 +19,11 @@
 import LoginComponent from '../components/LoginComponent';
 import SignupComponent from '../components/SignupComponent';
 export default {
-    name: 'Login',
-    components: {
-        LoginComponent,
-        SignupComponent,
-    },
-    setup() {},
+  name: "Login",
+  components: {
+    LoginComponent,
+    SignupComponent,
+  },
+  setup() {},
 };
 </script>

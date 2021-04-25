@@ -1,15 +1,14 @@
 <template>
-    <h2>Worksheets</h2>
-    <Questions />
+  <h2>Worksheets</h2>
+  <router-link :to="{ name: 'Worksheet', params: { id: 'ws1' } }"
+    >Worksheet Test</router-link
+  >
 </template>
 
 <script>
-import Questions from '../components/Questions.vue';
 export default {
-    name: 'Worksheets',
-    components: {
-        Questions,
-    },
+  name: "Worksheets",
+  components: {},
 };
 </script>
 
