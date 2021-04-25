@@ -8,10 +8,10 @@ import "tailwindcss/tailwind.css";
 let app;
 
 auth.onAuthStateChanged((user) => {
-    if (!app) {
-        app = createApp(App).use(store).use(router).mount("#app");
-    }
-    if (user) {
-        store.dispatch("fetchUserProfile", user);
-    }
+  if (!app) {
+    app = createApp(App).use(store).use(router).mount("#app");
+  }
+  if (user) {
+    store.dispatch("fetchUserProfile", user);
+  }
 });
