@@ -10,7 +10,7 @@ module.exports = {
             companyMain: {
                 light: '#ff475e',
                 DEFAULT: '#ff2659',
-                dark: '#cc005b',
+                dark: '#e61747',
             },
             gray: colors.coolGray,
             white: colors.white,

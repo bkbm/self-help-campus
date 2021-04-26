@@ -1,12 +1,12 @@
 <template>
-    <div class="flex flex-wrap h-full">
+    <div class="flex flex-wrap md:h-full">
         <div
-            class="flex w-full md:w-1/2 relative items-center justify-center text-center md:px-16"
+            class="flex w-full md:w-1/2 relative items-center justify-center text-center px-10 my-20"
         >
             <LoginComponent />
         </div>
         <div
-            class="flex w-full md:w-1/2 items-center justify-center text-center md:px-16"
+            class="flex w-full md:w-1/2 relative items-center justify-center text-center px-10 my-20"
         >
             <SignupComponent />
         </div>
