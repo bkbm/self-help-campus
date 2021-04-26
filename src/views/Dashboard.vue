@@ -1,17 +1,21 @@
 <template>
   <h2>Dashboard</h2>
-  <p>{{ user.firstName }}</p>
+  <ThoughtRecord  />
 </template>
 
 <script>
 import { computed } from "vue";
 //import {ref} from 'vue'
 import { useStore } from "vuex";
+import ThoughtRecord from "../components/ThoughtRecord.vue"
 export default {
   name: "Dashboard",
+  components:{
+    ThoughtRecord
+  },
   setup() {
     const store = useStore();
-    const user = computed(() => store.getters.getUserProfile);
+    const user = computed(() => store.getters.getUser);
 
     return { user };
   },

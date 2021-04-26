@@ -18,7 +18,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-const todosCollection = db.collection("todos");
 const usersCollection = db.collection("users");
+const worksheetCollection = db.collection("Worksheets")
 
-export { db, auth, todosCollection, usersCollection };
+export { db, auth, worksheetCollection, usersCollection };

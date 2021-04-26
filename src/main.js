@@ -4,7 +4,6 @@ import router from "./router";
 import store from "./store";
 import { auth } from "./firebase";
 import "tailwindcss/tailwind.css";
-
 let app;
 
 auth.onAuthStateChanged((user) => {
