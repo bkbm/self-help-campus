@@ -69,10 +69,13 @@ export default createStore({
             router.push('/dashboard');
         },
         //not working yet need to figure out, need to make specific to user
-        async fetchUserWorksheet({ commit, state}) {
-            const worksheets = (await firebase.worksheetCollection.get()).forEach(doc => {
-              console.log(state.user,doc.id," ",doc.data())
-            })
+        async fetchUserWorksheet({ commit, state }) {
+            const worksheets = {};
+            (await firebase.worksheetCollection.get()).forEach((doc) => {
+                worksheets[doc.id] = doc.data();
+                console.log(state.user, doc.id, ' ', doc.data());
+                return worksheets;
+            });
             commit('setUserWorksheet', worksheets);
         },
     },
