@@ -1,19 +1,24 @@
 <template>
-<div>{{ worksheet }}</div>
+<div v-for="item in worksheet" :key="item.id">
+    <Thought :record = "item" />
+</div>
 </template>
 
 <script>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+import Thought from './Thought.vue'
 export default {
+    components: {
+        Thought
+    },
     setup() {
         
         const store = useStore();
-        store.dispatch('fetchUserWorksheet');
         const worksheet = computed(() => {
-            return store.getters.getWorksheets;
+            return store.getters.getWorksheet;
         });
-        console.log('hello', worksheet)
+        console.log('hello', store.getters.getWorksheet)
         return {worksheet}
     },
 };
