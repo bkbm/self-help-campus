@@ -53,7 +53,7 @@ export default createStore({
             commit('setUserProfile', userProfile.data());
             commit('setUser', user.uid);
 
-            dispatch('fetchUserWorksheet',user.uid);
+            dispatch('fetchUserWorksheet', user.uid);
         },
         async signup({ dispatch }, form) {
             const { user } = await firebase.auth.createUserWithEmailAndPassword(
@@ -73,14 +73,31 @@ export default createStore({
         //not working yet need to figure out, need to make specific to user
         async fetchUserWorksheet({ commit, state }) {
             const worksheets = {};
-            console.log("User: ",state.user);
-            (await firebase.worksheetCollection.where("userid", "==", state.user).get()).forEach((doc) => {
+            console.log('User: ', state.user);
+            (
+                await firebase.worksheetCollection
+                    .where('userid', '==', state.user)
+                    .get()
+            ).forEach((doc) => {
                 worksheets[doc.id] = doc.data();
                 console.log(state.user, doc.id, ' ', doc.data());
                 return worksheets;
             });
-            console.log(worksheets)
+            console.log(worksheets);
             commit('setUserWorksheet', worksheets);
+        },
+        async submitFormData(form) {
+            const object = {
+                uid: form.userid,
+                templateid: form.templateid,
+                date: form.date,
+                time: form.time,
+                situation: form.situation,
+                emotion: form.emotion, 
+                thoughts: form.thoughts
+            };
+
+            await firebase.worksheetCollection.doc()
         },
     },
     modules: {},
