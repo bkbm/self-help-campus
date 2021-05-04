@@ -1,7 +1,9 @@
 <template>
-    <div class="w-full max-w-sm">
+    <div class="w-full max-w-md px-11 py-16 sm:px-14 sm:py-16 rounded-sm">
         <form @submit.prevent="login">
-            <h2 class="font-bold text-3xl mb-10 text-gray-800">Welcome Back</h2>
+            <h2 class="font-light text-4xl mb-24 text-gray-200">
+                Welcome Back
+            </h2>
             <div class="flex mb-3">
                 <div
                     class="w-11 flex p-2 text-center items-center justify-center z-10"
@@ -30,7 +32,7 @@
                     type="text"
                     placeholder="Email"
                     id="email1"
-                    class="border rounded-md p-3 text-sm w-full -ml-11 pl-14 outline-none focus:border-companyMain-light transition duration-300"
+                    class="border rounded-sm p-3 text-sm w-full -ml-11 pl-14 outline-none focus:border-companyMain-light transition duration-300"
                 />
             </div>
             <div class="flex mb-5">
@@ -61,17 +63,17 @@
                     type="password"
                     placeholder="Password"
                     id="password1"
-                    class="border rounded-md p-3 text-sm w-full -ml-11 pl-14 outline-none focus:border-companyMain-light transition duration-300"
+                    class="border rounded-sm p-3 text-sm w-full -ml-11 pl-14 outline-none focus:border-companyMain-light transition duration-300"
                 />
             </div>
             <div class="flex justify-between items-center">
                 <a
                     href="/"
-                    class="text-sm text-gray-400 hover:underline hover:text-gray-500"
+                    class="text-sm text-gray-300 hover:underline hover:text-gray-200"
                     >Forgot Password?</a
                 >
                 <button
-                    class="px-7 py-3 bg-companyMain rounded-md hover:bg-companyMain-dark transition duration-200 focus:outline-none"
+                    class="px-4 sm:px-7 py-3 bg-companyMain rounded-md hover:bg-companyMain-dark transition duration-200 focus:outline-none"
                 >
                     <h1 class="text-white text-md font-medium">LOGIN</h1>
                 </button>
@@ -79,7 +81,7 @@
         </form>
         <hr class="mt-14 mb-6" />
         <button
-            class="px-6 py-3 my-2 block w-full rounded-lg bg-white border border-grey-300 hover:bg-gray-100 transition duration-200 focus:outline-none"
+            class="px-2 sm:px-6 py-3 my-2 block w-full rounded-sm border border-grey-200 hover:border-companyMain-light transition duration-200 focus:outline-none"
         >
             <div class="flex items-center justify-center">
                 <svg
@@ -118,13 +120,13 @@
                         d="M48 48L17 24l-4-3 35-10z"
                     />
                 </svg>
-                <span class="text-sm text-gray-500 font-semibold ml-3"
+                <span class="text-sm font-semibold ml-3 text-gray-200"
                     >Sign In With Google</span
                 >
             </div>
         </button>
         <button
-            class="px-6 py-3 block w-full rounded-lg bg-white border border-grey-300 hover:bg-gray-100 transition duration-200 focus:outline-none"
+            class="px-2 sm:px-6 py-3 block w-full rounded-sm border border-grey-200 hover:border-companyMain-light transition duration-200 focus:outline-none"
         >
             <div class="flex items-center justify-center">
                 <svg
@@ -136,7 +138,7 @@
                         d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"
                     />
                 </svg>
-                <span class="text-sm text-gray-500 font-semibold ml-3"
+                <span class="text-sm font-semibold ml-3 text-gray-200"
                     >Sign In With Facebook</span
                 >
             </div>

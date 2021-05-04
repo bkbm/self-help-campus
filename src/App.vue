@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col h-screen overflow-auto">
-        <div class="flex flex-row h-16">
+    <div class="flex flex-col min-h-screen">
+        <div class="flex flex-row h-16 z-50 bg-gray-300">
             <div id="nav">
                 <router-link to="/">Home</router-link> |
                 <router-link to="/dashboard"> Dashboard </router-link> |

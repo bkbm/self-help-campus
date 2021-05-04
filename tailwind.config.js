@@ -14,6 +14,7 @@ module.exports = {
             },
             gray: colors.coolGray,
             white: colors.white,
+            black: colors.black,
         },
     },
     variants: {

@@ -1,5 +1,8 @@
 <template>
-    <form @submit.prevent="signup" class="w-full max-w-sm">
+    <form
+        @submit.prevent="signup"
+        class="w-full max-w-md bg-white px-11 py-16 sm:px-14 sm:py-20 rounded-sm"
+    >
         <h2 class="font-bold text-3xl mb-12 text-gray-800">Create Account</h2>
         <!--
         //? Do we really need this?
