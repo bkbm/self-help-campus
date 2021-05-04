@@ -1,9 +1,9 @@
 <template>
     <form
         @submit.prevent="signup"
-        class="w-full max-w-md bg-white px-11 py-16 sm:px-14 sm:py-20 rounded-sm"
+        class="w-full max-w-md px-11 py-16 sm:px-14 sm:py-20 rounded-sm"
     >
-        <h2 class="font-bold text-3xl mb-12 text-gray-800">Create Account</h2>
+        <h2 class="font-light text-4xl mb-14 text-gray-200">Create Account</h2>
         <!--
         //? Do we really need this?
         <div class="mb-3">
@@ -22,7 +22,7 @@
                 type="text"
                 placeholder="First Name"
                 id="fname"
-                class="border rounded-md p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
+                class="border rounded-sm p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
             />
         </div>
         <div class="mb-3">
@@ -31,7 +31,7 @@
                 type="text"
                 placeholder="Surname"
                 id="sname"
-                class="border rounded-md p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
+                class="border rounded-sm p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
             />
         </div>
         <div class="mb-3">
@@ -40,7 +40,7 @@
                 type="text"
                 placeholder="Email"
                 id="email"
-                class="border rounded-md p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
+                class="border rounded-sm p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
             />
         </div>
         <div class="mb-5">
@@ -49,11 +49,11 @@
                 type="password"
                 placeholder="Password"
                 id="password2"
-                class="border rounded-md p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
+                class="border rounded-sm p-3 text-sm w-full outline-none focus:border-companyMain-light transition duration-300"
             />
         </div>
         <button
-            class="px-6 py-3 block w-full bg-companyMain rounded-lg hover:bg-companyMain-dark transition duration-200 focus:outline-none"
+            class="px-6 py-3 block w-full bg-companyMain rounded-sm hover:bg-companyMain-dark transition duration-200 focus:outline-none"
         >
             <h1 class="text-white text-md font-medium">REGISTER</h1>
         </button>

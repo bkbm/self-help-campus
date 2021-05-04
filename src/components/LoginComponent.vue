@@ -1,7 +1,7 @@
 <template>
     <div class="w-full max-w-md px-11 py-16 sm:px-14 sm:py-16 rounded-sm">
         <form @submit.prevent="login">
-            <h2 class="font-light text-4xl mb-24 text-gray-200">
+            <h2 class="font-light text-4xl mb-14 text-gray-200">
                 Welcome Back
             </h2>
             <div class="flex mb-3">
@@ -73,7 +73,7 @@
                     >Forgot Password?</a
                 >
                 <button
-                    class="px-4 sm:px-7 py-3 bg-companyMain rounded-md hover:bg-companyMain-dark transition duration-200 focus:outline-none"
+                    class="px-4 sm:px-7 py-3 bg-companyMain rounded-sm hover:bg-companyMain-dark transition duration-200 focus:outline-none"
                 >
                     <h1 class="text-white text-md font-medium">LOGIN</h1>
                 </button>
