@@ -22,9 +22,13 @@ export default {
     const array = computed(() => {
       return store.getters.getQuestions[worksheetid.value]
     })
-    
+    const submitWorksheet = () => {
+      store.dispatch("submitFormData", {
+        
+      })
+    }
     console.log(worksheetid)
-    return {worksheetid, array}
+    return {worksheetid, array, submitWorksheet}
   }
 };
 </script>

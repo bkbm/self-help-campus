@@ -8,7 +8,7 @@ export default createStore({
         user: null,
         userProfile: {},
         worksheet: {},
-        questions: { ws1: ['Question 1', 'Question 2', 'Question 3'] },
+        questions: { ws1: ['State the situation?', 'What emotions did it evoke? What sensations did you experience', 'What thoughts did it  b'] },
     },
     getters: {
         getUserProfile(state) {
@@ -86,9 +86,9 @@ export default createStore({
             console.log(worksheets);
             commit('setUserWorksheet', worksheets);
         },
-        async submitFormData(form) {
+        async submitFormData({state},form) {
             const object = {
-                uid: form.userid,
+                uid: state.user,
                 templateid: form.templateid,
                 date: form.date,
                 time: form.time,
@@ -96,8 +96,7 @@ export default createStore({
                 emotion: form.emotion, 
                 thoughts: form.thoughts
             };
-
-            await firebase.worksheetCollection.doc()
+            console.log(object)
         },
     },
     modules: {},
