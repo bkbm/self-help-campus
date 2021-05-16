@@ -22,6 +22,11 @@ export default {
     const array = computed(() => {
       return store.getters.getQuestions[worksheetid.value]
     })
+    const submit = () => {
+      for(i in array){
+        
+      }
+    }
     const submitWorksheet = () => {
       store.dispatch("submitFormData", {
         
