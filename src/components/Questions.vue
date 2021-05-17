@@ -1,10 +1,10 @@
 <template>
-    <form>
+    <form @submit.prevent="submitWorksheet"> 
         <div class="list" v-for="item in array" :key="item">
             <div class="question">
                 <label> {{ item }} </label>
                 <br />
-                <input type="textarea" />
+                <input v-model="object[item]" type="textarea" />
             </div>
         </div>
         <button>Submit</button>
@@ -22,18 +22,15 @@ export default {
     const array = computed(() => {
       return store.getters.getQuestions[worksheetid.value]
     })
-    const submit = () => {
-      for(i in array){
-        
-      }
-    }
+    console.log(store.getters.getUserProfile)
+    const object = ref({uid: store.getters.getUser, templateId: worksheetid.value})
+
     const submitWorksheet = () => {
-      store.dispatch("submitFormData", {
-        
-      })
+      console.log("before", object.value)
+      store.dispatch("submitFormData", object.value)
     }
     console.log(worksheetid)
-    return {worksheetid, array, submitWorksheet}
+    return {worksheetid, array, submitWorksheet, object}
   }
 };
 </script>
