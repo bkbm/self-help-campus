@@ -2,6 +2,7 @@ import { createStore } from 'vuex';
 import * as firebase from '../firebase';
 import router from '../router/index';
 
+
 console.log(router, firebase);
 export default createStore({
     state: {
@@ -15,6 +16,7 @@ export default createStore({
             return state.userProfile;
         },
         getUser(state) {
+            console.log(state.user)
             return state.user;
         },
         getWorksheet(state) {
@@ -45,15 +47,13 @@ export default createStore({
             dispatch('fetchUserProfile', user);
             router.push('/dashboard');
         },
-        async fetchUserProfile({ commit, dispatch }, user) {
+        async fetchUserProfile({ commit }, user) {
             const userProfile = await firebase.usersCollection
                 .doc(user.uid)
                 .get();
 
             commit('setUserProfile', userProfile.data());
             commit('setUser', user.uid);
-
-            dispatch('fetchUserWorksheet', user.uid);
         },
         async signup({ dispatch }, form) {
             const { user } = await firebase.auth.createUserWithEmailAndPassword(
@@ -76,14 +76,14 @@ export default createStore({
             console.log('User: ', state.user);
             (
                 await firebase.worksheetCollection
-                    .where('userid', '==', state.user)
+                    .where('uid', '==', state.user)
                     .get()
             ).forEach((doc) => {
                 worksheets[doc.id] = doc.data();
-                //console.log(state.user, doc.id, ' ', doc.data());
+                console.log(state.user, doc.id, ' ', doc.data());
                 return worksheets;
             });
-            //console.log(worksheets);
+            console.log(worksheets);
             commit('setUserWorksheet', worksheets);
         },
         async submitFormData({dispatch},object) {

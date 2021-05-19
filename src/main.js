@@ -11,6 +11,7 @@ auth.onAuthStateChanged((user) => {
     app = createApp(App).use(store).use(router).mount("#app");
   }
   if (user) {
+    store.commit('setUser', user.uid);
     store.dispatch("fetchUserProfile", user);
   }
 });

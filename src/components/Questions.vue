@@ -22,14 +22,15 @@ export default {
     const array = computed(() => {
       return store.getters.getQuestions[worksheetid.value]
     })
-    console.log(store.getters.getUserProfile)
-    const object = ref({uid: store.getters.getUser, templateId: worksheetid.value})
+    const userId = computed( () => {
+      return store.getters.getUser
+    })
+    const object = ref({uid: userId.value,templateId: worksheetid.value})
 
     const submitWorksheet = () => {
       console.log("before", object.value)
       store.dispatch("submitFormData", object.value)
     }
-    console.log(worksheetid)
     return {worksheetid, array, submitWorksheet, object}
   }
 };

@@ -13,8 +13,8 @@ export default {
         Thought
     },
     setup() {
-        
         const store = useStore();
+        store.dispatch('fetchUserWorksheet')
         const worksheet = computed(() => {
             return store.getters.getWorksheet;
         });
