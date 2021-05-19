@@ -4,7 +4,7 @@
             <div class="question">
                 <label> {{ item }} </label>
                 <br />
-                <input v-model="object[item]" type="textarea" />
+                <input v-model="worksheetAnswers[item]" type="textarea" />
             </div>
         </div>
         <button>Submit</button>
@@ -25,13 +25,13 @@ export default {
     const userId = computed( () => {
       return store.getters.getUser
     })
-    const object = ref({uid: userId.value,templateId: worksheetid.value})
+    const worksheetAnswers = ref({uid: userId.value,templateId: worksheetid.value})
 
     const submitWorksheet = () => {
-      console.log("before", object.value)
-      store.dispatch("submitFormData", object.value)
+      console.log("before", worksheetAnswers.value)
+      store.dispatch("submitFormData", worksheetAnswers.value)
     }
-    return {worksheetid, array, submitWorksheet, object}
+    return {worksheetid, array, submitWorksheet, worksheetAnswers}
   }
 };
 </script>
