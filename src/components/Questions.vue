@@ -22,7 +22,7 @@
             <div v-if="item.type == 'range'" class="question">
                 <label> {{ item.question }} </label>
                 <br />
-                <input v-model="worksheetAnswers[item.question]" type="range" />
+                <input v-model="worksheetAnswers[item.question]" type="range" min=0 max=100 />
             </div>
             <div v-if="item.type == 'bigtext'" class="question">
                 <label> {{ item.question }} </label>

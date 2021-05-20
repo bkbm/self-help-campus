@@ -6,6 +6,9 @@
     <router-link :to="{ name: 'Worksheet', params: { id: 'ws2' } }">
         Venting
     </router-link>
+    <router-link :to="{ name: 'Worksheet', params: { id: 'ws3' } }">
+        CSS Test Worksheet
+    </router-link>
 </template>
 
 <script>

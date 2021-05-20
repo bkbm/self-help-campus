@@ -18,7 +18,34 @@ export default createStore({
                 },
                 { type: 'text', question: 'What thoughts did it provoke?' },
             ],
-            ws2: [{type: 'bigtext', question: 'Write whats been bothering you:'}]           
+            ws2: [
+                {
+                    type: 'bigtext',
+                    question: 'Write whats been bothering you:',
+                },
+            ],
+            ws3: [
+                {
+                    type: 'text',
+                    question: 'Text:',
+                },
+                {
+                    type: 'bigtext',
+                    question: 'Big Text:',
+                },
+                {
+                    type: 'date',
+                    question: 'Date:',
+                },
+                {
+                    type: 'time',
+                    question: 'Time:',
+                },
+                {
+                    type: 'range',
+                    question: 'range:',
+                },
+            ],
         },
     },
     getters: {
