@@ -4,7 +4,7 @@ import Worksheets from "../views/Worksheets.vue";
 import Worksheet from "../views/Worksheet.vue";
 import Dashboard from "../views/Dashboard.vue";
 import { auth } from "../firebase";
-console.log(auth);
+
 const routes = [
   {
     path: "/",
