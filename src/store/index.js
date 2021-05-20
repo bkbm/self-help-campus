@@ -2,21 +2,31 @@ import { createStore } from 'vuex';
 import * as firebase from '../firebase';
 import router from '../router/index';
 
-
 console.log(router, firebase);
 export default createStore({
     state: {
         user: null,
         userProfile: {},
         worksheet: {},
-        questions: { ws1: ['State the situation?', 'What emotions did it evoke? What sensations did you experience', 'What thoughts did it provoke'] },
+        questions: {
+            ws1: [
+                { type: 'text', question: 'State the situation?' },
+                {
+                    type: 'text',
+                    question:
+                        'What emotions did it evoke? What sensations did you experience',
+                },
+                { type: 'text', question: 'What thoughts did it provoke?' },
+            ],
+            ws2: [{type: 'bigtext', question: 'Write whats been bothering you:'}]           
+        },
     },
     getters: {
         getUserProfile(state) {
             return state.userProfile;
         },
         getUser(state) {
-            console.log(state.user)
+            console.log(state.user);
             return state.user;
         },
         getWorksheet(state) {
@@ -86,10 +96,10 @@ export default createStore({
             console.log(worksheets);
             commit('setUserWorksheet', worksheets);
         },
-        async submitFormData({dispatch},object) {
-            console.log("hello",object)
-            await firebase.worksheetCollection.add(object)
-            dispatch('fetchUserWorksheet', object.uid)
+        async submitFormData({ dispatch }, object) {
+            console.log('hello', object);
+            await firebase.worksheetCollection.add(object);
+            dispatch('fetchUserWorksheet', object.uid);
         },
     },
     modules: {},
