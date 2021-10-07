@@ -7,7 +7,13 @@
         Venting
     </router-link>
     <router-link :to="{ name: 'Worksheet', params: { id: 'ws3' } }">
+        DBT Check the Facts
+    </router-link>
+    <router-link :to="{ name: 'Worksheet', params: { id: 'ws4' } }">
         CSS Test Worksheet
+    </router-link>
+        <router-link :to="{ name: 'Worksheet', params: { id: 'ws5' } }">
+        DEARMAN worksheet
     </router-link>
 </template>
 

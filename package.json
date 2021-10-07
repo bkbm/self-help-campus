@@ -12,10 +12,11 @@
         "firebase": "^8.4.1",
         "vue": "^3.0.0",
         "vue-router": "^4.0.0-0",
+        "vue-slider-component": "^4.0.0-beta.4",
         "vuex": "^4.0.0-0"
     },
     "devDependencies": {
-        "@tailwindcss/postcss7-compat": "^2.1.0",
+        "@tailwindcss/postcss7-compat": "^2.2.16",
         "@vue/cli-plugin-babel": "~4.5.0",
         "@vue/cli-plugin-eslint": "~4.5.0",
         "@vue/cli-plugin-router": "~4.5.0",
@@ -28,7 +29,7 @@
         "eslint": "^7.24.0",
         "eslint-plugin-vue": "^7.9.0",
         "node-sass": "^4.12.0",
-        "postcss": "^7.0.35",
+        "postcss": "^7.0.38",
         "postcss-loader": "^5.2.0",
         "prettier": "^2.2.1",
         "sass-loader": "^8.0.2",
