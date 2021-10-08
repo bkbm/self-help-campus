@@ -1,36 +1,31 @@
 <template>
-    <form @submit="submitWorksheet">
-        <div class="list" v-for="item in array" :key="item">
-            <div v-if="item.type == 'text'" class="question">
+    <form @submit="submitWorksheet" class='p-10 md:w-3/4 lg:w-3/4 mx-auto'>
+        <div class="" v-for="item in array" :key="item">
+            <div v-if="item.type == 'detail'" class="md:font-bold">
                 <label> {{ item.question }} </label>
-                <br />
+            </div>
+            <div v-if="item.type == 'text'" >
+                <label> {{ item.question }} </label>
                 <input
                     v-model="worksheetAnswers[item.question]"
                     type="textarea"
                 />
             </div>
-            <div v-if="item.type == 'date'" class="question">
+            <div v-if="item.type == 'date'" >
                 <label> {{ item.question }} </label>
-                <br />
                 <input v-model="worksheetAnswers[item.question]" type="date" />
             </div>
-            <div v-if="item.type == 'time'" class="question">
+            <div v-if="item.type == 'time'" >
                 <label> {{ item.question }} </label>
-                <br />
                 <input v-model="worksheetAnswers[item.question]" type="time" />
             </div>
-            <div v-if="item.type == 'range'" class="question">
+            <div v-if="item.type == 'range'" >
                 <label> {{ item.question }} </label>
-                <br />
-                <input v-model="worksheetAnswers[item.question]" type="range" min=0 max=100 />
+                <vue-slider v-model="worksheetAnswers[item.question]" :min=" item.min " :max=" item.max "/>
             </div>
-            <div v-if="item.type == 'bigtext'" class="question">
+            <div v-if="item.type == 'bigtext'">
                 <label> {{ item.question }} </label>
-                <br />
-                <input
-                    v-model="worksheetAnswers[item.question]"
-                    type="textarea"
-                />
+                <textarea v-model="worksheetAnswers[item.question]" cols="30" rows="10" class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4"></textarea>
             </div>
         </div>
         <button>Submit</button>
@@ -40,7 +35,10 @@
 <script>
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
+import VueSlider from 'vue-slider-component';
+import 'vue-slider-component/theme/antd.css';
 export default {
+    components: {VueSlider},
     props: ['id'],
     setup(props) {
         const store = useStore();

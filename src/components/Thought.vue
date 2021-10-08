@@ -1,5 +1,5 @@
 <template>
-  <span v-for="item in rec" :key="item.key">[{{item}}] </span>
+  <span v-for="item in rec" :key="item.key">[{{item.key}}{{item}}] </span>
   
 </template>
 
